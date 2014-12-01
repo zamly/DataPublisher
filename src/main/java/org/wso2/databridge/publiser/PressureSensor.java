@@ -1,3 +1,21 @@
+/*
+*  Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+*
+*  WSO2 Inc. licenses this file to you under the Apache License,
+*  Version 2.0 (the "License"); you may not use this file except
+*  in compliance with the License.
+*  You may obtain a copy of the License at
+*
+*    http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+* KIND, either express or implied.  See the License for the
+* specific language governing permissions and limitations
+* under the License.
+*/
+
 package org.wso2.databridge.publiser;
 
 import org.wso2.carbon.databridge.agent.thrift.Agent;
@@ -24,6 +42,30 @@ public class PressureSensor {
     final Date start = new Date();
     final Random random = new Random();
 
+
+    /**
+     * The main method.
+     *
+     * @param args
+     *            the arguments
+     * @throws MalformedURLException
+     *             the malformed url exception
+     * @throws AgentException
+     *             the agent exception
+     * @throws AuthenticationException
+     *             the authentication exception
+     * @throws TransportException
+     *             the transport exception
+     * @throws MalformedStreamDefinitionException
+     *             the malformed stream definition exception
+     * @throws StreamDefinitionException
+     *             the stream definition exception
+     * @throws DifferentStreamDefinitionAlreadyDefinedException
+     *             the different stream definition already defined exception
+     * @throws InterruptedException
+     *             the interrupted exception
+     * @throws UndefinedEventTypeException
+     */
     public static void main(String[] args)
             throws UndefinedEventTypeException, AgentException,
             MalformedURLException, AuthenticationException,
@@ -83,6 +125,22 @@ public class PressureSensor {
     }
 
 
+    /**
+     * Gets the stream id if already defined
+     * or else created a new one.
+     *
+     * @param dataPublisher
+     *            the data publisher
+     * @return the stream id
+     * @throws AgentException
+     *             the agent exception
+     * @throws MalformedStreamDefinitionException
+     *             the malformed stream definition exception
+     * @throws StreamDefinitionException
+     *             the stream definition exception
+     * @throws DifferentStreamDefinitionAlreadyDefinedException
+     *             the different stream definition already defined exception
+     */
     private static String getStreamID(DataPublisher dataPublisher)
             throws AgentException,
             MalformedStreamDefinitionException,
